@@ -1,0 +1,53 @@
+*{
+    font-family: 'Cairo', sans-serif;
+    font-family: 'Karla', sans-serif;
+}
+body{
+background: #404258;
+}
+
+nav{
+    background: #44465e;
+    display: flex;
+    justify-content: center;
+    color: $textColor;
+    padding-bottom: 30px;
+}
+section{
+    .card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background: #50577A;
+    transition: 0.3s;
+    display: grid;
+    // flex-direction: column;
+  }
+  button {
+    height: 100px;
+    width: 100%;
+  }
+  .quiz{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 50px;
+  }
+}
+
+  
+  /* On mouse-over, add a deeper shadow */
+  .card{
+    height: 70vh;
+    &:hover{
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+  }
+  
+  /* Add some padding inside the card container */
+  .container {
+    i{
+       font-size: 20px;
+        
+    }
+    padding: 2px 16px;
+    // width: 300px;
+  }
