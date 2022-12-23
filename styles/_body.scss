@@ -1,7 +1,6 @@
 *{
     font-family: 'Cairo', sans-serif;
     font-family: 'Karla', sans-serif;
-    color: aliceblue;
 }
 body{
 background: #404258;
@@ -14,13 +13,12 @@ nav{
     color: $textColor;
     padding-bottom: 30px;
 }
-section{
-    .card {
+.card {
     /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     background: #50577A;
     transition: 0.3s;
-    width: 80%;
+    width: 95%;
     margin: auto;
     height: 100%;
     &:hover{
@@ -28,7 +26,29 @@ section{
     }
     // display: grid;
     // flex-direction: column;
+  
+  #question{
+    h2{
+      color: aliceblue;
+    }
   }
+  .answers-area{
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    .answer{
+      width: 80%;
+      // height: 80px;
+      border-style: groove;
+      border: 1px solid #404258;
+      padding: 30px;
+    }
+  }
+
+  
+  
   .button{
     display: flex;
     height: 60px;
@@ -37,7 +57,6 @@ section{
     margin: auto;
     align-items: center;
     margin-top: 2rem;
-    // box-sizing: border-box;
     background: #404258;
     color: aliceblue;
     border-radius: 5px;
@@ -47,37 +66,94 @@ section{
     }
     
   }
+  
   .quiz{
     display: flex;
     justify-content: space-between;
     padding-top: 20px;
+    padding: 20px;
+    color: aliceblue;
+
   }
+  
+  
+  .icon{
+    margin-top: 15px;
+    i{
+      font-size: 20px;
+      color: aliceblue;
+
+       
+   }
+   padding: 15px 15px;
+  }
+  
+  }
+  
+  .btnSubmit{
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+
   #submit{
     height: 50px;
     width: 30%;
     color: black !important;
     font-weight: bold;
+    border-radius: 5px;
+    border-style: none;
   }
-  .btnSubmit{
-    padding: 15px;
-    display: flex;
-    justify-content: center;
+
+
+
   }
+
+
+.card2{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  background: #50577A;
+  transition: 0.3s;
+  width: 95%;
+  margin: auto;
+  height: 100%;
+  &:hover{
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+
   .icon{
     margin-top: 15px;
-  }
- 
-}
-
-  
-
-  
-  /* Add some padding inside the card container */
-  .container {
     i{
-       font-size: 20px;
-        
-    }
-    padding: 2px 16px;
+      font-size: 20px;
+      color: aliceblue;
+
+       
+   }
+   padding: 15px 15px;
   }
+
+  .button-container{
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+    #yn{
+      color: #404258;
+      padding: 8px;
+    }
+    .start{
+      padding: 8px;
+      font-weight: bold;
+      border-radius: 2px;
+      border-style: none;
+    }
+    .pd{
+      padding: 10px;
+    }
+}
+}  
+
+
+  
+ 
+
+
  
