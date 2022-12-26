@@ -6,6 +6,47 @@
 body {
   background: #404258;
 }
+body .card3 {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background: #50577A;
+  transition: 0.3s;
+  width: 60%;
+  margin: auto;
+  height: 100%;
+}
+body .card3:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+body .card3 .icon {
+  margin-top: 15px;
+  padding: 15px 15px;
+}
+body .card3 .icon i {
+  font-size: 20px;
+  color: aliceblue;
+}
+body .card3 .button-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+}
+body .card3 .button-container #yn {
+  color: #404258;
+  padding: 8px;
+}
+body .card3 .button-container .start {
+  padding: 8px;
+  font-weight: bold;
+  border-radius: 2px;
+  border-style: none;
+}
+body .card3 .button-container .pd {
+  padding: 15px;
+}
+body .card3 .button-container .pd #note {
+  color: aliceblue;
+}
 
 nav {
   display: flex;
@@ -26,17 +67,19 @@ nav {
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
-.card #question h2 {
-  color: aliceblue;
+.card #question .quiz-area h2 {
+  width: 80%;
+  justify-content: center;
+  padding: 10px;
 }
-.card .answers-area {
+.card #question .answers-area {
   color: aliceblue;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
-.card .answers-area .answer {
+.card #question .answers-area .answer {
   width: 80%;
   border-style: groove;
   border: 1px solid #404258;
@@ -108,22 +151,4 @@ nav {
 .card2 .icon i {
   font-size: 20px;
   color: aliceblue;
-}
-.card2 .button-container {
-  display: flex;
-  justify-content: center;
-  padding-top: 50px;
-}
-.card2 .button-container #yn {
-  color: #404258;
-  padding: 8px;
-}
-.card2 .button-container .start {
-  padding: 8px;
-  font-weight: bold;
-  border-radius: 2px;
-  border-style: none;
-}
-.card2 .button-container .pd {
-  padding: 10px;
 }/*# sourceMappingURL=style.css.map */

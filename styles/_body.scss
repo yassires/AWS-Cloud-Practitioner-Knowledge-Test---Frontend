@@ -4,6 +4,54 @@
 }
 body{
 background: #404258;
+
+  .card3{
+     /* Add shadows to create the "card" effect */
+     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+     background: #50577A;
+     transition: 0.3s;
+     width: 60%;
+     margin: auto;
+     height: 100%;
+     &:hover{
+         box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+     }
+     // display: grid;
+     // flex-direction: column;
+
+     .icon{
+      margin-top: 15px;
+      i{
+        font-size: 20px;
+        color: aliceblue;
+  
+         
+     }
+     padding: 15px 15px;
+    }
+    .button-container{
+      display: flex;
+      justify-content: center;
+      padding-top: 10px;
+        #yn{
+          color: #404258;
+          padding: 8px;
+        }
+        .start{
+          padding: 8px;
+          font-weight: bold;
+          border-radius: 2px;
+          border-style: none;
+        }
+        .pd{
+          padding: 15px;
+          #note{
+            color: aliceblue;
+          }
+        }
+    }
+   
+  }
 }
 
 nav{
@@ -28,9 +76,13 @@ nav{
     // flex-direction: column;
   
   #question{
-    h2{
-      color: aliceblue;
-    }
+    .quiz-area{
+      h2{
+        width: 80%;
+        justify-content: center;
+        padding: 10px;
+        // background-color: aliceblue;
+      }
   }
   .answers-area{
     color: aliceblue;
@@ -44,6 +96,8 @@ nav{
       border-style: groove;
       border: 1px solid #404258;
       padding: 30px;
+    }
+    
     }
   }
 
@@ -131,24 +185,7 @@ nav{
    padding: 15px 15px;
   }
 
-  .button-container{
-  display: flex;
-  justify-content: center;
-  padding-top: 50px;
-    #yn{
-      color: #404258;
-      padding: 8px;
-    }
-    .start{
-      padding: 8px;
-      font-weight: bold;
-      border-radius: 2px;
-      border-style: none;
-    }
-    .pd{
-      padding: 10px;
-    }
-}
+  
 }  
 
 
