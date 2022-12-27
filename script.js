@@ -29,14 +29,11 @@ start_btn[0].addEventListener("click", function (e) {
 // submit
 next_btn.addEventListener("click", function (e) {
     endQuiz(index)
-    check()
     clearInterval(interval);
-    afficher_question(DATA.questions[index]);
-    // clearInterval(interval);
     check()
+    afficher_question(DATA.questions[index]);
+    
     index++;
-    console.log("index "+index);
-    // endQuiz(index)
     
 
 })
@@ -45,11 +42,12 @@ next_btn.addEventListener("click", function (e) {
 // end 
 
 function endQuiz(index){
-    if(index==6){
+    if(index>7){
         
         document.querySelector('.card').style.display='none'
         document.querySelector('.card2').style.display='block'
         next_btn.remove()
+        ver()
 
     }
 }
@@ -80,11 +78,8 @@ function afficher_question(question) {
     
     timer();
 
-    console.log(question)
-    // for (let i = 0; i < question.length; i++) {
-    //     const element = array[i];
-        
-    // }
+    // console.log(question)
+   
     let output = `
             <div> 
                 <div class="quiz">
@@ -96,20 +91,20 @@ function afficher_question(question) {
                 </div>
             <div class="answers-area">
                 <div class="answer">
-                <input type="radio" id="answers" name="questions" value="${question.options[0].content}"/>
-                <label for="answer-1">${question.options[0].content}</label>
+                    <input type="radio" id="answers" name="questions" value="${question.options[0].content}"/>
+                    <label for="answer-1">${question.options[0].content}</label>
                 </div>
                 <div class="answer">
-                <input type="radio" id="answers" name="questions" value="${question.options[1].content}"/>
-                <label for="answer-2">${question.options[1].content}</label>
+                    <input type="radio" id="answers" name="questions" value="${question.options[1].content}"/>
+                    <label for="answer-2">${question.options[1].content}</label>
                 </div>
                 <div class="answer">
-                <input type="radio" id="answers" name="questions" value="${question.options[2].content}"/>
-                <label for="answer-3">${question.options[2].content}</label>
+                    <input type="radio" id="answers" name="questions" value="${question.options[2].content}"/>
+                    <label for="answer-3">${question.options[2].content}</label>
                 </div>
                 <div class="answer">
-                <input type="radio" id="answers" name="questions" value="${question.options[3].content}"/>
-                <label for="answer-4">${question.options[3].content}</label>
+                    <input type="radio" id="answers" name="questions" value="${question.options[3].content}"/>
+                    <label for="answer-4">${question.options[3].content}</label>
                 </div>
             </div>
             </div>
@@ -117,7 +112,6 @@ function afficher_question(question) {
     
     `;
     document.querySelector("#question").innerHTML = output;
-    console.log('first')
 }
 
 
@@ -144,14 +138,30 @@ document.addEventListener("DOMContentLoaded", function() {
     for (let i = 0; i < checks.length; i++) {
         // console.log(checks[i].value)
         if(checks[i].checked){
-            
             val = checks[i].value
+
             console.log(val)
             list.push(val)
             console.log(list)
+
 
         }
         
     }
     
   }
+
+
+  function ver(){
+    for (let i = 0; i < list.length; i++) {
+        console.log(list[i])
+        console.log(DATA.questions[i].answer.correct)
+        if(list[i]===DATA.questions[i].answer.correct){
+            console.log('yes')
+        }else{
+            console.log('no')
+        }
+    }
+  }
+
+  

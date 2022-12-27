@@ -28,7 +28,7 @@
                         }
                     ],
                     "answer":{
-                        "correct":3,
+                        "correct":"Amazon EC2 instances can be launched on demand when needed.",
                         "comment":"The ability to launch instances on demand when needed allows users to launch and terminate instances in response to a varying workload. This is a more economical practice than purchasing enough on-premises servers to handle the peak load"
                     }
                 },
@@ -49,12 +49,12 @@
                             "content":"Amazon EC2"
                         },
                         {
-                            "id":3,
+                            "id":4,
                             "content":"Amazon AppStream 2.0"
                         }
                     ],
                     "answer":{
-                        "correct":2,
+                        "correct":"AWS Database Migration Service(AWS DMS)",
                         "comment":"AWS DMS helps users migrate database to AWS quickly and securely . The source database remains fully operational during the migration ,minimizing downtime to application that rely on the database .AWS DMS can migrate data to and from most widely used commercial and open-source databases."
                     }
                 },
@@ -80,7 +80,7 @@
                         }
                     ],
                     "answer":{
-                        "correct":4,
+                        "correct":"AWS Marketplace",
                         "comment":"AWS Marketplace is a digital catalog with thousand of software listings from independent software vendors that makes it easy to find, test ,buy,and deploy software that runs on AWS "
                     }
                 },
@@ -106,7 +106,7 @@
                         }
                     ],
                     "answer":{
-                        "correct":4,
+                        "correct":"Amazon Virtual Private Cloud (Amazon VPC)",
                         "comment":"Amazon VPC lets users provision a logically isolated section of the AWS Cloud where users can launch AWS resources in a virtual network that they define"
                     }
                 },
@@ -132,7 +132,7 @@
                         }
                     ],
                     "answer":{
-                        "correct":2,
+                        "correct":"Maintaining physical hardware",
                         "comment":"Maintaining physical hardware is an AWS responsability under the AWS shared responsibility model."
                     }
                 },
@@ -158,7 +158,7 @@
                         }
                     ],
                     "answer":{
-                        "correct":2,
+                        "correct":"Edge locations",
                         "comment":"To deliver content to users with lower latency, Amazon CloudFront uses a global network of point of presence (edge locations and regional edge caches ) worldwide."
                     }
                 }
