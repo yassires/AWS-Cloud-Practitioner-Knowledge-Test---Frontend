@@ -18,20 +18,6 @@ const next_btn = document.getElementById("submit");
 const start_btn = document.getElementsByClassName("start");
 let elements  = document.getElementsByClassName("answer");
 
-// button
-// $('.answer').on('click', function () {
-//     $(this).toggleClass('active');
-// });
-//elements[0].classList.toggle("active");
-console.log(elements.length);
-for (let i = 0; i < elements.length; i++) {
-  //let elements = elements[i];
-  
-  
-  elements[i].addEventListener("click", function (e) {
-    elements[i].classList.toggle("active");
-  });
-}
 
 // start
 start_btn[0].addEventListener("click", function (e) {
@@ -57,11 +43,18 @@ next_btn.addEventListener("click", function (e) {
     afficher_question(DATA.questions[index]);
      for (let i = 0; i < elements.length; i++) {
         elements[i].addEventListener("click", function (e) {
-          elements[i].classList.toggle("active");
+            for (let j = 0; j< elements.length; j++) {
+                
+                  elements[j].classList.remove("active");
+                
+              }
+          elements[i].classList.add("active");
         });
       }
+   
     index++;
 })
+
 
 
 // end 
@@ -120,19 +113,19 @@ function afficher_question(question) {
                 <h2>${question.content}</h2>
                 </div>
             <div class="answers-area">
-                <div class="answer">
+                <div class="answer" >
                     <input type="radio" id="answers" name="questions" value="${question.options[0].content}"/>
                     <label for="answer-1">${question.options[0].content}</label>
                 </div>
-                <div class="answer">
+                <div class="answer" >
                     <input type="radio" id="answers" name="questions" value="${question.options[1].content}"/>
                     <label for="answer-2">${question.options[1].content}</label>
                 </div>
-                <div class="answer">
+                <div class="answer" >
                     <input type="radio" id="answers" name="questions" value="${question.options[2].content}"/>
                     <label for="answer-3">${question.options[2].content}</label>
                 </div>
-                <div class="answer">
+                <div class="answer" >
                     <input type="radio" id="answers" name="questions" value="${question.options[3].content}"/>
                     <label for="answer-4">${question.options[3].content}</label>
                 </div>
