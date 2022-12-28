@@ -14,42 +14,70 @@ var time = 0;
 var interval;
 let index = 0;
 let seconds;
-const next_btn = document.getElementById("submit")
-const start_btn = document.getElementsByClassName("start")
+const next_btn = document.getElementById("submit");
+const start_btn = document.getElementsByClassName("start");
+let elements  = document.getElementsByClassName("answer");
 
+// button
+// $('.answer').on('click', function () {
+//     $(this).toggleClass('active');
+// });
+//elements[0].classList.toggle("active");
+console.log(elements.length);
+for (let i = 0; i < elements.length; i++) {
+  //let elements = elements[i];
+  
+  
+  elements[i].addEventListener("click", function (e) {
+    elements[i].classList.toggle("active");
+  });
+}
 
 // start
 start_btn[0].addEventListener("click", function (e) {
     clearInterval(interval);
     afficher_question(DATA.questions[index]);
+    for (let i = 0; i < elements.length; i++) {
+        elements[i].addEventListener("click", function (e) {
+          elements[i].classList.toggle("active");
+        });
+      }
+
     index++;
 })
 
 
 // submit
 next_btn.addEventListener("click", function (e) {
+
+    check()
     endQuiz(index)
     clearInterval(interval);
-    check()
+   
     afficher_question(DATA.questions[index]);
-    
+     for (let i = 0; i < elements.length; i++) {
+        elements[i].addEventListener("click", function (e) {
+          elements[i].classList.toggle("active");
+        });
+      }
     index++;
-    
-
 })
 
 
 // end 
 
 function endQuiz(index){
-    if(index>7){
+    if(index>=6){
         
         document.querySelector('.card').style.display='none'
         document.querySelector('.card2').style.display='block'
         next_btn.remove()
+        clearInterval(interval);
         ver()
+        console.log(list);
 
     }
+    return;
 }
 
 function timer() {
@@ -74,11 +102,13 @@ function timer() {
 }
 
 
+
+let test;
 function afficher_question(question) {
-    
+    test = question.content;
     timer();
 
-    // console.log(question)
+    console.log(question)
    
     let output = `
             <div> 
@@ -133,33 +163,43 @@ document.addEventListener("DOMContentLoaded", function() {
   let list = []
   function check(){
     let val
-  let checks = document.getElementsByName('questions')
-
-    for (let i = 0; i < checks.length; i++) {
-        // console.log(checks[i].value)
-        if(checks[i].checked){
-            val = checks[i].value
-
-            console.log(val)
-            list.push(val)
-            console.log(list)
-
-
+    let checks = document.getElementsByName('questions')
+        for (let i = 0; i < checks.length; i++) {
+            // console.log(checks[i].value)
+            if(checks[i].checked){
+                val = checks[i].value
+                //console.log(val)
+                list.push(val)  
+            }
         }
-        
-    }
-    
   }
 
-
+let score=0;
   function ver(){
     for (let i = 0; i < list.length; i++) {
         console.log(list[i])
         console.log(DATA.questions[i].answer.correct)
         if(list[i]===DATA.questions[i].answer.correct){
             console.log('yes')
+            score++;
         }else{
-            console.log('no')
+            console.log('no');
+            let result = document.querySelector("#result");
+            console.log(result);
+            result.innerHTML += `
+                                <div class="resultSection"> 
+                                <h2>${DATA.questions[i].content}</h2> 
+                                <p class="userch">${list[i]}</p>
+                                <p class="correctAnswer">${DATA.questions[i].answer.correct}</p> <br>
+                                <p class="justify">${DATA.questions[i].answer.comment}</p> <br>
+                                <hr>
+                                </div>
+                                
+                                `
+            // result.innerHTML += '<h2>'+DATA.questions[i].content+'</h2>'
+            // result.innerHTML += '<p class="userch">'+list[i]+'</p>'
+            // result.innerHTML += '<p class="correctAnswer">' + DATA.questions[i].answer.correct +'</p> <br>'
+            // result.innerHTML += '<p class="justify">' + DATA.questions[i].answer.comment +'</p> <br>'
         }
     }
   }

@@ -103,13 +103,14 @@ nav{
     justify-content: space-between;
     align-items: center;
     .answer{
+      cursor: pointer;
       width: 80%;
       border: 1px solid #ffffff;
       border-radius: 5px;
       font-weight: bold;
       padding: 20px;
       margin-bottom:  10px;
-      &:hover{
+      &:hover {
         background-color: aliceblue;
         color: #404258;
         transition: 0.5s;
@@ -121,6 +122,11 @@ nav{
         height: 5px;
         opacity: 0;
       }
+    }
+    .active{
+        background-color: aliceblue;
+        font-weight: bolder;
+        color: #404258;
     }
   
     
@@ -191,7 +197,7 @@ nav{
 
 .card2{
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  background: #50577A;
+  background: #ffffffa1;
   transition: 0.3s;
   width: 95%;
   margin: auto;
@@ -205,12 +211,44 @@ nav{
     margin-top: 15px;
     i{
       font-size: 20px;
-      color: aliceblue;
+      color: #404258;
 
        
    }
    padding: 15px 15px;
   }
+  .title{
+    display: flex;
+    justify-content: center;
+  }
+  #result{
+    width: 90%;
+    margin: auto;
+    justify-content: center;
+    .resultSection{
+      border-bottom: #404258;
+      // background-color: #404258;
+      // border-style: solid;
+      // border-width: 0px 2px 2px 2px;
+      // border-color: black;
+    }
+  }
+  .correctAnswer{
+    background-color: $color-success;
+    @extend %answers;
+    margin: 0 0 12px 0;
+}
+.userch{
+    background-color: $color-danger;
+    @extend %answers;
+    margin: 0 0 12px 0;
+}
+.justify{
+    background-color: $color-warning;
+    @extend %answers;
+    margin: 0 0 12px 0;
+    color: #404258;
+}
 
   
 }  
