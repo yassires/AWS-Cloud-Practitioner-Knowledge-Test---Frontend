@@ -5,6 +5,80 @@
 body{
 background: #404258;
 
+
+.stepper_compenent{
+  .stepper {
+  ul {
+      display: flex;
+      justify-content: center;
+      margin: 5px;
+      li {
+          list-style: none;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          .icon {
+              font-size: 27px;
+              margin: 0 200px;
+              color: $color3;
+          }
+          .step {
+            color: $color-white;
+              font-size: 15px;
+              font-weight: 600;
+          }
+          .progress {
+              margin: 2px 0;
+              width: 30px;
+              height: 30px;
+              border-radius: 50%;
+              background-color: $color3;
+              display: grid;
+              place-items: center;
+              position: relative;
+              cursor: pointer;
+              .uil {
+                  display: none;
+              }
+              .number {
+                margin: 0;
+                  font-size: 14px;
+                  color: $color4;
+                  font-weight: 800;
+              }
+          }
+          .progress::after {
+              content: " ";
+              position: absolute;
+              width: 397px;
+              height: 5px;
+              background-color: $color3;
+              right: 30px;
+          }
+          .one::after {
+              width: 0;
+              height: 0;
+          }
+          .active {
+              background-color: $color4;
+              .number {
+                  display: none;
+              }
+              .uil {
+                  display: flex;
+              }
+          }
+          .active::after {
+              background-color: $color4;
+          }
+      }
+  }
+}
+
+}
+
+
   .card3{
      /* Add shadows to create the "card" effect */
      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);

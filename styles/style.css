@@ -14,6 +14,72 @@
 body {
   background: #404258;
 }
+body .stepper_compenent .stepper ul {
+  display: flex;
+  justify-content: center;
+  margin: 5px;
+}
+body .stepper_compenent .stepper ul li {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+body .stepper_compenent .stepper ul li .icon {
+  font-size: 27px;
+  margin: 0 200px;
+  color: #fff;
+}
+body .stepper_compenent .stepper ul li .step {
+  color: rgb(211, 211, 211);
+  font-size: 15px;
+  font-weight: 600;
+}
+body .stepper_compenent .stepper ul li .progress {
+  margin: 2px 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #fff;
+  display: grid;
+  place-items: center;
+  position: relative;
+  cursor: pointer;
+}
+body .stepper_compenent .stepper ul li .progress .uil {
+  display: none;
+}
+body .stepper_compenent .stepper ul li .progress .number {
+  margin: 0;
+  font-size: 14px;
+  color: #ff6319;
+  font-weight: 800;
+}
+body .stepper_compenent .stepper ul li .progress::after {
+  content: " ";
+  position: absolute;
+  width: 397px;
+  height: 5px;
+  background-color: #fff;
+  right: 30px;
+}
+body .stepper_compenent .stepper ul li .one::after {
+  width: 0;
+  height: 0;
+}
+body .stepper_compenent .stepper ul li .active {
+  background-color: #ff6319;
+}
+body .stepper_compenent .stepper ul li .active .number {
+  display: none;
+}
+body .stepper_compenent .stepper ul li .active .uil {
+  display: flex;
+}
+body .stepper_compenent .stepper ul li .active::after {
+  background-color: #ff6319;
+}
 body .card3 {
   /* Add shadows to create the "card" effect */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);

@@ -1,3 +1,9 @@
+
+const one = document.querySelector(".one");
+const two = document.querySelector(".two");
+const three = document.querySelector(".three");
+
+
 let DATA;
 let j;
 fetch("qz.json")
@@ -28,7 +34,7 @@ start_btn[0].addEventListener("click", function (e) {
           elements[i].classList.toggle("active");
         });
       }
-
+      two.classList.add('active');
     index++;
 })
 
@@ -68,7 +74,7 @@ function endQuiz(index){
         clearInterval(interval);
         ver()
         console.log(list);
-
+        three.classList.add('active');
     }
     return;
 }
